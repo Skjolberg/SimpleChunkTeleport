@@ -1,23 +1,24 @@
 package net.shibacraft.simplechunkteleport.api.logger;
 
+import net.shibacraft.simplechunkteleport.SimpleChunkTeleport;
 import net.shibacraft.simplechunkteleport.api.chat.TextColor;
 import org.bukkit.Bukkit;
 
 public class CoreLogger {
 
     public static final String LOGGER_NAME = "&d&lSimpleChunkTeleport";
-
-    public static void info(String message) {
-        Bukkit.getLogger().info(TextColor.color(LOGGER_NAME + "&8 | &r" + message));
-        Bukkit.getConsoleSender().sendMessage("");
-    }
+    private static final SimpleChunkTeleport simpleChunkTeleport = SimpleChunkTeleport.getPlugin();
 
     public static void warn(String message) {
-        Bukkit.getLogger().warning(TextColor.color(LOGGER_NAME + "&8 | &e" + message));
+        simpleChunkTeleport.getLogger().warning(LOGGER_NAME + " | " + message);
     }
 
     public static void severe(String message) {
-        Bukkit.getLogger().severe(TextColor.color(LOGGER_NAME + "&8 | &c" + message));
+        simpleChunkTeleport.getLogger().severe(LOGGER_NAME + " | " + message);
+    }
+
+    public static void log(String message) {
+        Bukkit.getConsoleSender().sendMessage(TextColor.color(LOGGER_NAME + "&8 | &r" + message));
     }
 
 }

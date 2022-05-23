@@ -6,7 +6,7 @@ import net.shibacraft.simplechunkteleport.commands.MainCommand;
 
 public class CommandModule implements Loader {
 
-    SimpleChunkTeleport plugin;
+    private final SimpleChunkTeleport plugin;
 
     public CommandModule(SimpleChunkTeleport plugin){
         this.plugin = plugin;

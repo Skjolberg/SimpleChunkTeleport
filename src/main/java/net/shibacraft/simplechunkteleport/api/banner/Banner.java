@@ -14,9 +14,9 @@ public class Banner implements Loader {
 
     @Override
     public void load() {
-        CoreLogger.info("&5Plugin: &e" + plugin.getName());
-        CoreLogger.info("&fAuthor: &e" + plugin.getDescription().getAuthors().get(0));
-        CoreLogger.info("&fVersion: &e" + plugin.getDescription().getVersion());
+        CoreLogger.log("&5Plugin: &e" + plugin.getName());
+        CoreLogger.log("&fAuthor: &e" + plugin.getDescription().getAuthors().get(0));
+        CoreLogger.log("&fVersion: &e" + plugin.getDescription().getVersion());
     }
 
     @Override

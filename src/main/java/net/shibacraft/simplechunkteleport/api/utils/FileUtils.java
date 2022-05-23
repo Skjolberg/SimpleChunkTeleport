@@ -9,7 +9,7 @@ public class FileUtils {
 
     static SimpleChunkTeleport plugin = SimpleChunkTeleport.getPlugin();
 
-    public static void createFileIfNotExists(String file){
+    public static void createFileIfNotExists(String file) {
         File fileCheck = new File(plugin.getDataFolder(), file);
 
         if (!fileCheck.exists()) {
@@ -17,7 +17,7 @@ public class FileUtils {
         }
     }
 
-    public static void checkFiles(Set<String> filesCheck){
+    public static void checkFiles(Set<String> filesCheck) {
 
         for (String file : filesCheck) {
             createFileIfNotExists(file);

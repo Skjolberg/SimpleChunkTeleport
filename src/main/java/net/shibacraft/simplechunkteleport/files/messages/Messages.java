@@ -1,8 +1,6 @@
 package net.shibacraft.simplechunkteleport.files.messages;
 
 import de.leonhard.storage.Yaml;
-import lombok.Getter;
-import lombok.Setter;
 import net.shibacraft.simplechunkteleport.api.chat.TextColor;
 import net.shibacraft.simplechunkteleport.files.FileManager;
 
@@ -17,21 +15,18 @@ public enum Messages {
     NO_PERMISSION("NO_PERMISSION", "&cYou do not have permission to do this."),
     RELOAD("RELOAD", "&aPlugin reloaded!");
 
-    @Getter
     private final String path;
 
-    @Getter
-    @Setter
     private String value;
 
-    @Getter
     private static boolean Prefix = true;
 
     /**
      * Returns a simple message setting colours and prefix.
+     *
      * @return String
      */
-    public String get(){
+    public String get() {
         return Prefix ? TextColor.color(PREFIX.getValue() + this.value) : TextColor.color(this.value);
     }
 
@@ -42,13 +37,13 @@ public enum Messages {
 
     public static void load() {
 
-        Yaml messagesFile = FileManager.getFilesYaml().get("Messages");
+        Yaml messagesFile = FileManager.getFileManager().getYaml("Messages");
 
         Prefix = !messagesFile.getString("PREFIX").isEmpty();
 
         for (Messages msg : values()) {
 
-            if(!messagesFile.contains(msg.getPath())){
+            if (!messagesFile.contains(msg.getPath())) {
                 messagesFile.set(msg.getPath(), msg.getValue());
                 continue;
             }
@@ -58,4 +53,21 @@ public enum Messages {
         }
 
     }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public boolean isPrefix() {
+        return Prefix;
+    }
+
 }
