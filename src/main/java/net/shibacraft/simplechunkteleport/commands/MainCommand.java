@@ -27,6 +27,7 @@ public class MainCommand implements CommandExecutor {
 
         if(sender instanceof ConsoleCommandSender){
             sender.sendMessage("This command can only be used in-game.");
+            return false;
         } else {
             Player p = (Player)sender;
             if(p.hasPermission("sct.use") || p.isOp()){
@@ -62,12 +63,9 @@ public class MainCommand implements CommandExecutor {
                         } catch (NumberFormatException ex){
                             sender.sendMessage(Messages.INVALID_CHUNK.get());
                         }
-
-
                     } else {
                         sender.sendMessage(Messages.INVALID_ARGUMENT.get());
                     }
-
                 } else {
                     sender.sendMessage(Messages.NEED_ARGUMENTS.get());
                 }
@@ -75,10 +73,6 @@ public class MainCommand implements CommandExecutor {
                 sender.sendMessage(Messages.NO_PERMISSION.get());
             }
         }
-
-
-
         return true;
     }
-
 }
