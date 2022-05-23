@@ -1,6 +1,6 @@
 name: SimpleChunkTeleport
 main: net.shibacraft.simplechunkteleport.SimpleChunkTeleport
-version: '${v}'
+version: '0.0.1-SNAPSHOT'
 author: SKJOLBERG
 
 commands:

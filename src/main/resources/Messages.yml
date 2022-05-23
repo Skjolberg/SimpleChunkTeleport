@@ -1,0 +1,6 @@
+PREFIX: "&8[&dSimpleChunkTeleport&8]&r "
+INVALID_ARGUMENT: "&cThe argument %s is Invalid."
+NEED_ARGUMENTS: "&cThe command need arguments."
+TELEPORT: "&aYou have teleported to: {location}."
+NO_PERMISSION: "&cYou do not have permission to do this."
+RELOAD: "&aPlugin reloaded!"
