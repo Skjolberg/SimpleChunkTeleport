@@ -1,2 +1,2 @@
-# SimpleDropInventory
-Automatically drops items into the inventory
+# SimpleChunkTeleport
+Teleport to a chunk
